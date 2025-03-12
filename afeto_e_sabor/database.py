@@ -12,8 +12,18 @@ def criar_tabelas():
         tipo TEXT NOT NULL,
         nome TEXT NOT NULL,
         quantidade INTEGER NOT NULL,
+        valor REAL NOT NULL,
         nota_fiscal TEXT NOT NULL,
         horario TEXT NOT NULL
+    )
+    ''')
+
+    # Criar tabela para armazenar os produtos
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS produtos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        valor REAL NOT NULL
     )
     ''')
 
